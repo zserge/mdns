@@ -59,8 +59,10 @@ func main() {
 					log.Println(m.Resolve(s))
 				}
 			}
-		} else {
+		} else if err == liner.ErrPromptAborted {
 			break
+		} else {
+			log.Fatal(err)
 		}
 	}
 
